@@ -54,7 +54,6 @@ function getComputerChoice(){
             break
     }
 }
-console.log(getComputerChoice())
 
 function getHumanChoice(){
     let userDecision = prompt("Escribe 'rock', 'paper' o 'scissors'").toLowerCase()
@@ -71,13 +70,12 @@ function getHumanChoice(){
     }
 }
 
-
 let humanScore = 0
 let computerScore = 0
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice){
-        console.log("¡Empate! Se repite la ronda.")
+        console.log("¡Empate! Nadie puntúa.")
     }
 
     else if (humanChoice === "scissors" && computerChoice === "rock"){
@@ -109,7 +107,8 @@ function playRound(humanChoice, computerChoice){
 }
 
 function playGame(){
-    for (let i = 1; i !== 5; i++){
+    console.log("¡Vamos a jugar al piedra, papel o tijera!")
+    for (let i = 0; i !== 5; i++){
         playRound(getHumanChoice(), getComputerChoice())
         console.log(`Tu puntuación: ${humanScore}`)
         console.log(`Puntuación del rival: ${computerScore}`)
@@ -120,16 +119,12 @@ function playGame(){
     if (computerScore > humanScore){
         console.log("¡Tu rival! Lo siento, has perdido...")
     }
-    else{
+    else if(computerScore < humanScore){
         console.log ("¡Tú! ¡Has ganado!")
+    }
+    else{
+        console.log("¡Empate! Pues vaya...")
     }
 }
 
-
-/*PASO 5:
-
-Crea función playGame
-    Invoca playRound 5 veces
-    Muestra puntuación de ordenador y jugador
-    Una vez se haya hecho playRound 5 veces, declara ganador
-    */
+playGame()
