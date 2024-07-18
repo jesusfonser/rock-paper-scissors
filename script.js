@@ -75,34 +75,31 @@ console.log(getHumanChoice())
 let humanScore = 0
 let computerScore = 0
 
+function playRound(humanChoice, computerChoice){
+    if (humanChoice === computerChoice){
+        console.log("¡Empate! Se repite la ronda.")
+    }
 
+    else if (humanChoice === "scissors" && computerChoice === "rock"){
+        console.log("¡Has perdido! Rock le gana a Scissors.")
+        computerScore += 1
+    }
+    else if (humanChoice === "scissors" && computerChoice === "paper"){
+        console.log("¡Has ganado! Scissors le gana a Paper.")
+        humanScore += 1
+    }
 
+    else if (humanChoice === "paper" && computerChoice === "scissors"){
+        console.log("¡Has perdido! Scissors le gana a Paper.")
+    }
+    else if (humanChoice === "paper" && computerChoice === "rock"){
+        console.log("¡Has ganado! Paper le gana a Rock.")
+    }
 
-/*
-PASO 4:
-
-Crea función playRound. Sus parámetros son humanChoice y computerChoice
-    Función hará console.log para anunciar al ganador de la ronda así:
-        "You win/lose! (elección ganadora) beats (elección perdedora)"
-    Aumenta en 1 humanScore o computerScore dependiendo de quién ganó la ronda
-
-    Función playRound, parámetros humanChoice y computerChoice
-
-        if humanChoice es igual a computerChoice
-            console.log ¡Empate! Se repite la ronda.
-
-        else if humanChoice es scissors y computerChoice es rock
-            console.log ¡Has perdido! Rock le gana a Scissors
-        else if humanChoice es scissors y computerChoice es paper
-            console.log ¡Has ganado! Scissors le gana a Paper
-
-        else if humanChoice es paper y computerChoice es scissors
-            console.log ¡Has perdido! Scissors le gana a Paper
-        else if humanChoice es paper y computerChoice es rock
-            console.log ¡Has ganado! Paper le gana a Rock
-
-        else if humanChoice es rock y computerChoice es paper
-            console.log ¡Has perdido! Paper le gana a Rock
-        else if humanChoice es rock y computerChoice es scissors
-            console.log ¡Has ganado! Rock le gana a Scissors
-    */
+    else if (humanChoice === "rock" && computerChoice === "paper"){
+        console.log("¡Has perdido! Paper le gana a Rock.")
+    }
+    else if (humanChoice === "rock" && computerChoice === "scissors"){
+        console.log("¡Has ganado! Rock le gana a Scissors.")
+    }
+}
