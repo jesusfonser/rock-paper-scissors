@@ -37,20 +37,7 @@ Crea función playGame
 
 -----PSEUDOCÓDIGO------
 
-PASO 1:
 
-Crea función getComputerChoice
-    Haz que devuelva uno de estos string de manera aleatoria: rock paper scissors
-    Haz console.log al valor devuelto por getComputerChoice
-
-Declara la función getComputerChoice sin parámetros
-    Variable numDecision. Inicialízala con un valor aleatorio entre 1 y 3.
-    Switch con numDecision
-        Caso 1: return "rock"
-        Caso 2: return "paper"
-        Caso 3: return "scissors"
-
-Muestra en consola el resultado de invocar getComputerChoice
 */
 
 function getComputerChoice(){
@@ -67,5 +54,20 @@ function getComputerChoice(){
             break
     }
 }
-
 console.log(getComputerChoice())
+
+function getHumanChoice(){
+    let userDecision = prompt("Escribe 'rock', 'paper' o 'scissors'")
+    switch(userDecision){
+        case "rock":
+            return "rock"
+            break
+        case "paper":
+            return "paper"
+            break
+        default:
+            return "scissors"
+            break
+    }
+}
+console.log(getHumanChoice())
