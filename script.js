@@ -91,15 +91,19 @@ function playRound(humanChoice, computerChoice){
 
     else if (humanChoice === "paper" && computerChoice === "scissors"){
         console.log("¡Has perdido! Scissors le gana a Paper.")
+        computerScore += 1
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
         console.log("¡Has ganado! Paper le gana a Rock.")
+        humanScore += 1
     }
 
     else if (humanChoice === "rock" && computerChoice === "paper"){
         console.log("¡Has perdido! Paper le gana a Rock.")
+        computerScore += 1
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
         console.log("¡Has ganado! Rock le gana a Scissors.")
+        humanScore += 1
     }
 }
