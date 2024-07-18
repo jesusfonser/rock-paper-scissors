@@ -70,7 +70,7 @@ function getHumanChoice(){
             break
     }
 }
-console.log(getHumanChoice())
+
 
 let humanScore = 0
 let computerScore = 0
@@ -107,3 +107,29 @@ function playRound(humanChoice, computerChoice){
         humanScore += 1
     }
 }
+
+function playGame(){
+    for (let i = 1; i !== 5; i++){
+        playRound(getHumanChoice(), getComputerChoice())
+        console.log(`Tu puntuación: ${humanScore}`)
+        console.log(`Puntuación del rival: ${computerScore}`)
+    }
+
+    console.log("Y el ganador es...")
+
+    if (computerScore > humanScore){
+        console.log("¡Tu rival! Lo siento, has perdido...")
+    }
+    else{
+        console.log ("¡Tú! ¡Has ganado!")
+    }
+}
+
+
+/*PASO 5:
+
+Crea función playGame
+    Invoca playRound 5 veces
+    Muestra puntuación de ordenador y jugador
+    Una vez se haya hecho playRound 5 veces, declara ganador
+    */
