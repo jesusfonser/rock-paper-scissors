@@ -108,12 +108,8 @@ function playRound(humanChoice, computerChoice){
 
 function playGame(){
     console.log("¡Vamos a jugar al piedra, papel o tijera!")
-    for (let i = 0; i !== 5; i++){
         playRound(getHumanChoice(), getComputerChoice())
-        console.log(`Tu puntuación: ${humanScore}`)
-        console.log(`Puntuación del rival: ${computerScore}`)
-    }
-
+    
     console.log("Y el ganador es...")
 
     if (computerScore > humanScore){
