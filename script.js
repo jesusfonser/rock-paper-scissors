@@ -43,6 +43,7 @@ Crea función playGame
 let nVictorias = document.querySelector("#puntosJugador");
 let nDerrotas = document.querySelector("#puntosPC");
 let nEmpates = document.querySelector("#empates");
+let dialogo = document.querySelector("#dialogo");
 
 function getComputerChoice(){
     let numDecision = Math.floor(Math.random()*3+1)
@@ -80,33 +81,40 @@ let computerScore = 0
 function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice){
         nEmpates.textContent = parseInt(nEmpates.textContent) + 1;
+        dialogo.textContent = "¡Empate! Habéis elegido lo mismo..."
     }
 
     else if (humanChoice === "scissors" && computerChoice === "rock"){
         nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
+        dialogo.textContent = `¡Has perdido! Tu rival eligió Rock.`
         computerScore += 1
     }
     else if (humanChoice === "scissors" && computerChoice === "paper"){
         nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
+        dialogo.textContent = `¡Has ganado! Tu rival eligió Paper.`
     }
 
     else if (humanChoice === "paper" && computerChoice === "scissors"){
         nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
         computerScore += 1
+        dialogo.textContent = `¡Has perdido! Tu rival eligió Scissors.`
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
         nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
+        dialogo.textContent = `¡Has ganado! Tu rival eligió Rock.`
     }
 
     else if (humanChoice === "rock" && computerChoice === "paper"){
         nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
         computerScore += 1
+        dialogo.textContent = `¡Has perdido! Tu rival eligió Paper.`
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
         nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
+        dialogo.textContent = `¡Has ganado! Tu rival eligió Scissors.`
     }
 }
 
