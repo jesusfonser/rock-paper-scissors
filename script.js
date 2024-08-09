@@ -123,4 +123,11 @@ function playGame(){
     }
 }
 
-playGame()
+let botones = document.querySelectorAll("button")
+botones.forEach((boton) => {
+    boton.addEventListener('click', () => {
+        let eleccion = boton.textContent.toLowerCase();
+        playRound(eleccion, getComputerChoice());
+    })
+})
+
