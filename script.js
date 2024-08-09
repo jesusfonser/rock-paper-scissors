@@ -116,6 +116,17 @@ function playRound(humanChoice, computerChoice){
         humanScore += 1
         dialogo.textContent = `¡Has ganado! Tu rival eligió Scissors.`
     }
+
+    if (humanScore === 5){
+        let ganador = document.createElement("p");
+        ganador.textContent = "¡¡HAS GANADO!!";
+        dialogo.appendChild(ganador);
+    }
+    else if (computerScore === 5){
+        let perdedor = document.createElement("p");
+        perdedor.textContent = "Has perdido. Que pena...";
+        dialogo.appendChild(perdedor);
+    }
 }
 
 function playGame(){
