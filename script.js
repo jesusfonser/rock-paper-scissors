@@ -40,6 +40,10 @@ Crea función playGame
 
 */
 
+let nVictorias = document.querySelector("#puntosJugador");
+let nDerrotas = document.querySelector("#puntosPC");
+let nEmpates = document.querySelector("#empates");
+
 function getComputerChoice(){
     let numDecision = Math.floor(Math.random()*3+1)
     switch (numDecision){
@@ -75,33 +79,33 @@ let computerScore = 0
 
 function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice){
-        console.log("¡Empate! Nadie puntúa.")
+        nEmpates.textContent = parseInt(nEmpates.textContent) + 1;
     }
 
     else if (humanChoice === "scissors" && computerChoice === "rock"){
-        console.log("¡Has perdido! Rock le gana a Scissors.")
+        nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
         computerScore += 1
     }
     else if (humanChoice === "scissors" && computerChoice === "paper"){
-        console.log("¡Has ganado! Scissors le gana a Paper.")
+        nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
     }
 
     else if (humanChoice === "paper" && computerChoice === "scissors"){
-        console.log("¡Has perdido! Scissors le gana a Paper.")
+        nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
         computerScore += 1
     }
     else if (humanChoice === "paper" && computerChoice === "rock"){
-        console.log("¡Has ganado! Paper le gana a Rock.")
+        nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
     }
 
     else if (humanChoice === "rock" && computerChoice === "paper"){
-        console.log("¡Has perdido! Paper le gana a Rock.")
+        nDerrotas.textContent = parseInt(nDerrotas.textContent) + 1;
         computerScore += 1
     }
     else if (humanChoice === "rock" && computerChoice === "scissors"){
-        console.log("¡Has ganado! Rock le gana a Scissors.")
+        nVictorias.textContent = parseInt(nVictorias.textContent) + 1;
         humanScore += 1
     }
 }
